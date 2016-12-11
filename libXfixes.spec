@@ -4,7 +4,7 @@
 #
 Name     : libXfixes
 Version  : 5.0.3
-Release  : 9
+Release  : 10
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Summary  : X Fixes  Library
@@ -77,8 +77,8 @@ rm -rf %{buildroot}
 %files dev
 %defattr(-,root,root,-)
 /usr/include/X11/extensions/Xfixes.h
-/usr/lib64/*.so
-/usr/lib64/pkgconfig/*.pc
+/usr/lib64/libXfixes.so
+/usr/lib64/pkgconfig/xfixes.pc
 
 %files doc
 %defattr(-,root,root,-)
@@ -86,4 +86,5 @@ rm -rf %{buildroot}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/*.so.*
+/usr/lib64/libXfixes.so.3
+/usr/lib64/libXfixes.so.3.1.0
