@@ -6,7 +6,7 @@
 #
 Name     : libXfixes
 Version  : 5.0.3
-Release  : 13
+Release  : 14
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Source99 : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2.sig
@@ -90,11 +90,14 @@ popd
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491879891
-export CFLAGS="$CFLAGS -Os -ffunction-sections -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -Os -ffunction-sections -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -Os -ffunction-sections -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -Os -ffunction-sections -fno-semantic-interposition "
+export SOURCE_DATE_EPOCH=1492279313
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -114,7 +117,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1491879891
+export SOURCE_DATE_EPOCH=1492279313
 rm -rf %{buildroot}
 pushd ../build32/
 %make_install32
