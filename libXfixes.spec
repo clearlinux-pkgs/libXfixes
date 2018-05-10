@@ -6,7 +6,7 @@
 #
 Name     : libXfixes
 Version  : 5.0.3
-Release  : 16
+Release  : 17
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2
 Source99 : http://xorg.freedesktop.org/releases/individual/lib/libXfixes-5.0.3.tar.bz2.sig
